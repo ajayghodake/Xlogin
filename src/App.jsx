@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "./App.css";
 
@@ -19,44 +19,41 @@ function App() {
     }
   };
 
-  // const handleUserName = (e) => {
-  //   setUsername(e.target.value);
-  // };
-
-  // const handleUserPassword = (e) => {
-  //   setPassword(e.target.value);
-  // }
-
-
-
   return (
     <>
       <h1>Login Page</h1>
       {!pass ? (
         <>
-        {welcome && <p>{welcome}</p>}
-         <form onSubmit={handleUserAuth}>
-          <div>
-            <label>
-            Username
-              <input type="text" value={userName} onChange={(e) => setUsername(e.target.value)} required />
-            </label>
-          </div>
+          {welcome && <p>{welcome}</p>}
+          <form onSubmit={handleUserAuth}>
+            <div>
+              <label htmlFor="username">Username </label>
+              <input
+                type="text"
+                id="username"
+                value={userName}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
 
-          <div>
-            <label>
-            Password
-              <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} required/>
-            </label>
-          </div>
+            <div>
+              <label htmlFor="password">Password </label>
+              <input
+                type="text"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
 
-          <div>
-            <button type="submit">Submit</button>
-            {/* <button type="submit" disabled={userName === "" || password === ""}>Submit</button> */}
-          </div>
-
-        </form>
-    </>
+            <div>
+              <button type="submit">Submit</button>
+              {/* <button type="submit" disabled={userName === "" || password === ""}>Submit</button> */}
+            </div>
+          </form>
+        </>
       ) : (
         <p>{welcome}</p>
       )}
