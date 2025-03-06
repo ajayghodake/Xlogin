@@ -19,20 +19,14 @@ function App() {
     }
   };
 
-  const handleUserName = (e) => {
-    setUsername(e.target.value);
-  };
+  // const handleUserName = (e) => {
+  //   setUsername(e.target.value);
+  // };
 
-  const handleUserPassword = (e) => {
-    setPassword(e.target.value);
-  }
+  // const handleUserPassword = (e) => {
+  //   setPassword(e.target.value);
+  // }
 
-
-  useEffect(() => {
-    setUsername("");
-    setPassword("");
-  }
-  , []);
 
 
   return (
@@ -45,20 +39,22 @@ function App() {
           <div>
             <label>
             Username:
-              <input type="text" value={userName} onChange={(e) => handleUserName(e)} required />
+              <input type="text" value={userName} onChange={(e) => setUsername(e.target.value)} required />
             </label>
           </div>
 
           <div>
             <label>
             Password:
-              <input type="text" value={password} onChange={(e) => handleUserPassword(e)} required/>
+              <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </label>
           </div>
 
           <div>
             <button type="submit">Submit</button>
+            {/* <button type="submit" disabled={userName === "" || password === ""}>Submit</button> */}
           </div>
+
         </form>
     </>
       ) : (
