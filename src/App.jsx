@@ -28,6 +28,12 @@ function App() {
   }
 
 
+  useEffect(() => {
+    setUsername("");
+    setPassword("");
+  }
+  , []);
+
 
   return (
     <>
