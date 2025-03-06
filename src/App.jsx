@@ -19,6 +19,15 @@ function App() {
     }
   };
 
+  const handleUserName = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handleUserPassword = (e) => {
+    setPassword(e.target.value);
+  }
+
+
 
   return (
     <>
@@ -30,14 +39,14 @@ function App() {
           <div>
             <label>
             Username:
-              <input type="text" value={userName} onChange={(e) => setUsername(e.target.value)} required />
+              <input type="text" value={userName} onChange={(e) => handleUserName(e)} required />
             </label>
           </div>
 
           <div>
             <label>
             Password:
-              <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+              <input type="text" value={password} onChange={(e) => handleUserPassword(e)} required/>
             </label>
           </div>
 
