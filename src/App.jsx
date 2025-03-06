@@ -14,7 +14,7 @@ function App() {
       setWelcome("Welcome, user!");
       setPass(true);
     } else {
-      setWelcome("Invalid credentials");
+      setWelcome("Invalid username or password");
       setPass(false);
     }
   };
@@ -23,17 +23,18 @@ function App() {
       <h1>Login Page</h1>
       {!pass ? (
         <>
+        {welcome && <p>{welcome}</p>}
          <form onSubmit={handleUserAuth}>
           <div>
             <label>
-              Username:
+            Username:
               <input type="text" onChange={(e) => setUsername(e.target.value)} required />
             </label>
           </div>
 
           <div>
             <label>
-              Password:
+            Password:
               <input type="text" onChange={(e) => setPassword(e.target.value)} required/>
             </label>
           </div>
@@ -42,7 +43,6 @@ function App() {
             <button type="submit">Submit</button>
           </div>
         </form>
-        {welcome && <p>{welcome}</p>}
     </>
       ) : (
         <p>{welcome}</p>
