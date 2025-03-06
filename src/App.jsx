@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./App.css";
 
@@ -18,6 +18,11 @@ function App() {
       setPass(false);
     }
   };
+
+  useEffect(() => {
+
+  }, []);
+
   return (
     <>
       <h1>Login Page</h1>
@@ -28,14 +33,14 @@ function App() {
           <div>
             <label>
             Username:
-              <input type="text" onChange={(e) => setUsername(e.target.value)} required />
+              <input type="text" value={userName} onChange={(e) => setUsername(e.target.value)} required />
             </label>
           </div>
 
           <div>
             <label>
             Password:
-              <input type="text" onChange={(e) => setPassword(e.target.value)} required/>
+              <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </label>
           </div>
 
