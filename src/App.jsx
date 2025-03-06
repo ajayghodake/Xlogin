@@ -38,14 +38,14 @@ function App() {
          <form onSubmit={handleUserAuth}>
           <div>
             <label>
-            Username:
+            Username
               <input type="text" value={userName} onChange={(e) => setUsername(e.target.value)} required />
             </label>
           </div>
 
           <div>
             <label>
-            Password:
+            Password
               <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </label>
           </div>
